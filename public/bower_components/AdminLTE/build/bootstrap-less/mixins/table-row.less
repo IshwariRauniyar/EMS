@@ -1,0 +1,22 @@
+.table-row-variant(@state; @background) {
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.@{state},
+    > th.@{state},
+    &.@{state} > td,
+    &.@{state} > th {
+      background-color: @background;
+    }
+  }
+
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 5%);
+    }
+  }
+}
